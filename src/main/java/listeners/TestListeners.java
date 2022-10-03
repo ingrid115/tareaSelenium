@@ -1,8 +1,11 @@
 package listeners;
 
+import base.BaseTest;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import utilities.DriverMananger;
 import utilities.Logs;
 
 public class TestListeners implements ITestListener {
@@ -21,6 +24,10 @@ public class TestListeners implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         log.endTest("FAIL");
+        var driverManager = new DriverMananger();
+        var driver = getDriverFromResult(result);
+        driverManager.getScreenshot(driver, result.getName());
+        driverManager.getAllureScreenshot(driver);
     }
 
     @Override
@@ -46,5 +53,10 @@ public class TestListeners implements ITestListener {
     @Override
     public void onFinish(ITestContext context) {
         ITestListener.super.onFinish(context);
+    }
+
+    private WebDriver getDriverFromResult(ITestResult result) {
+        var currentClass = result.getInstance();
+        return ((BaseTest) currentClass).getDriver();
     }
 }

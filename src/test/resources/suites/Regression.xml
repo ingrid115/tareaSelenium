@@ -12,9 +12,9 @@
         <listener class-name="listeners.SuiteListeners"/>
     </listeners>
 
-    <test name="Tests de lectura de excel">
+    <test name="Basic Test">
         <packages>
-            <package name="excelReader"/>
+            <package name="basic"/>
         </packages>
     </test>
 
