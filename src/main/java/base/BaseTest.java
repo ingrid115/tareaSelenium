@@ -20,18 +20,16 @@ public class BaseTest {
     protected WebDriver driver;
     protected final String smoke = "Smoke";
     protected final String regression = "Regression";
-    protected final String mainUrl = "http://the-internet.herokuapp.com/login";
+    protected final String mainUrl = "http://the-internet.herokuapp.com/";
+    protected final String mainUrl1 = "login";
+    protected final String mainUrl2 = "checkboxes";
+    protected final String mainUrl3 = "add_remove_elements/";
+    protected final String mainUrl4 = "status_codes";
 
     @BeforeMethod(alwaysRun = true)
     public void setupBase() {
         softAssert = new SoftAssert();
         driver = driverMananger.createDriver();
-
-        log.info("Navigating to the main url");
-        driver.get(mainUrl);
-
-        log.info("Waiting main page to load");
-        utilities.waitSeconds(2);
     }
 
     @AfterMethod(alwaysRun = true)

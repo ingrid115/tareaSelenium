@@ -17,16 +17,4 @@
             <package name="basic"/>
         </packages>
     </test>
-
-    <test name="Tests de faker">
-        <packages>
-            <package name="faker"/>
-        </packages>
-    </test>
-
-    <test name="Tests de lectura json">
-        <packages>
-            <package name="jsonReader"/>
-        </packages>
-    </test>
 </suite>
