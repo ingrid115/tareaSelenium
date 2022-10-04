@@ -1,6 +1,7 @@
 package basic;
 
 import base.BaseTest;
+import jdk.jfr.Description;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -19,6 +20,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test(groups = {smoke})
+    @Description("exercise 1 : login")
     public void firstTest() {
         log.info("Verifying Login displayed");
         Assert.assertTrue(driver.findElement(By.id("username")).isDisplayed());
@@ -52,6 +54,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test(groups = {smoke, regression})
+    @Description("exercise 2 : login")
     public void secondTest() {
         log.info("Verifying Login displayed");
         Assert.assertTrue(driver.findElement(By.id("username")).isDisplayed());

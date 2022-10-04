@@ -1,6 +1,7 @@
 package basic;
 
 import base.BaseTest;
+import jdk.jfr.Description;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -19,6 +20,7 @@ public class CheckboxesTests extends BaseTest {
     }
 
     @Test(groups = {regression})
+    @Description("exercise 3 : checkbox")
     public void ThirdTest() {
         log.info("Verifying checkbox");
         var selectList = driver.findElements(By.xpath("//input[@type='checkbox']"));

@@ -1,6 +1,7 @@
 package basic;
 
 import base.BaseTest;
+import jdk.jfr.Description;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -19,6 +20,7 @@ public class RemoveElementsTests extends BaseTest {
     }
 
     @Test(groups = {regression})
+    @Description("exercise 4 : remove elements")
     public void fourthTest() {
         log.info("Make click button 'add element'");
         for (int i = 0; i < 10; i++) {

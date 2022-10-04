@@ -1,6 +1,7 @@
 package basic;
 
 import base.BaseTest;
+import jdk.jfr.Description;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -19,6 +20,7 @@ public class StatusCodeTests extends BaseTest {
     }
 
     @Test(groups = {smoke, regression})
+    @Description("exercise 5 : status code")
     public void fifthTest() {
         var currentUrl = driver.getCurrentUrl();
 
