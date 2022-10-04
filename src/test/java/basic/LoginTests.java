@@ -20,42 +20,55 @@ public class LoginTests extends BaseTest {
 
     @Test(groups = {smoke})
     public void firstTest() {
-
+        log.info("Verifying Login displayed");
         Assert.assertTrue(driver.findElement(By.id("username")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.id("password")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.className("radius")).isDisplayed());
 
+        log.info("Login credentials");
         driver.findElement(By.id("username")).sendKeys("tomsmith");
         driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
+
+        log.info("Make click");
         driver.findElement(By.className("radius")).click();
 
         log.info("Waiting main page to load");
         utilities.waitSeconds(2);
 
+        log.info("Verifying message");
         Assert.assertTrue(driver.findElement(By.cssSelector("div[class='flash success']")).isDisplayed());
+
+        log.info("Verifying button displayed");
         Assert.assertTrue(driver.findElement(By.cssSelector("a[class='button secondary radius']")).isDisplayed());
+
+        log.info("Make click");
         driver.findElement(By.cssSelector("a[class='button secondary radius']")).click();
 
         log.info("Waiting main page to load");
         utilities.waitSeconds(2);
 
+        log.info("Verifying Login displayed");
         Assert.assertTrue(driver.findElement(By.id("username")).isDisplayed());
     }
 
     @Test(groups = {smoke, regression})
     public void secondTest() {
-
+        log.info("Verifying Login displayed");
         Assert.assertTrue(driver.findElement(By.id("username")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.id("password")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.className("radius")).isDisplayed());
 
+        log.info("Login credentials");
         driver.findElement(By.id("username")).sendKeys("hola123");
         driver.findElement(By.id("password")).sendKeys("hehehe");
+
+        log.info("Make click");
         driver.findElement(By.className("radius")).click();
 
         log.info("Waiting main page to load");
         utilities.waitSeconds(2);
 
+        log.info("Verifying message");
         Assert.assertTrue(driver.findElement(By.cssSelector("div[class='flash error']")).isDisplayed());
     }
 }

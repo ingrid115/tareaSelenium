@@ -20,17 +20,19 @@ public class CheckboxesTests extends BaseTest {
 
     @Test(groups = {regression})
     public void ThirdTest() {
-
+        log.info("Verifying checkbox");
         var selectList = driver.findElements(By.xpath("//input[@type='checkbox']"));
         for (var select : selectList) {
             Assert.assertFalse(selectList.get(0).isSelected());
             Assert.assertTrue(selectList.get(1).isSelected());
         }
 
+        log.info("Mark checkbox 1/ uncheck checkbox 2");
         for (var button : selectList) {
             button.click();
         }
 
+        log.info("Verifying checkbox");
         for (var select : selectList) {
             Assert.assertTrue(selectList.get(0).isSelected());
             Assert.assertFalse(selectList.get(1).isSelected());

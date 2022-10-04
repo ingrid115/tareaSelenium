@@ -20,19 +20,22 @@ public class RemoveElementsTests extends BaseTest {
 
     @Test(groups = {regression})
     public void fourthTest() {
-
+        log.info("Make click button 'add element'");
         for (int i = 0; i < 10; i++) {
             driver.findElement(By.xpath("//button[text()='Add Element']")).click();
         }
 
+        log.info("Verifying 10 elements");
         var deleteList = driver.findElements(By.className("added-manually"));
         Assert.assertEquals(deleteList.size(), 10);
 
+        log.info("Make click button 'delete'");
         for (var delete : deleteList) {
             delete.click();
         }
+
+        log.info("Verifying 0 elements");
         var cont = driver.findElements(By.className("added-manually"));
         Assert.assertEquals(cont.size(), 0);
     }
-
 }

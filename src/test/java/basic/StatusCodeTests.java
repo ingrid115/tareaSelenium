@@ -22,16 +22,20 @@ public class StatusCodeTests extends BaseTest {
     public void fifthTest() {
         var currentUrl = driver.getCurrentUrl();
 
+        log.info("Make click in '404'");
         driver.findElement(By.xpath("//a[text()='404']")).click();
+
         log.info("Waiting main page to load");
         utilities.waitSeconds(2);
 
+        log.info("Make click in 'here'");
         driver.findElement(By.xpath("//a[text()='here']")).click();
+
         log.info("Waiting main page to load");
         utilities.waitSeconds(2);
 
+        log.info("Verifying the main url");
         var currentUrl2 = driver.getCurrentUrl();
         Assert.assertEquals(currentUrl2, currentUrl);
-
     }
 }
